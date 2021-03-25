@@ -1,0 +1,9 @@
+@import "../../../../../../assets/scss/colors";
+
+.item {
+  margin: 1rem 0;
+  .url {
+    color: $primary-color;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../../../../../../assets/scss/buttons";
+@import "../../../../../../../assets/scss/buttons";
+
+.form {
+  .btn {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .text {
+    text-align: center;
+    width: 100%;
+    max-width: 220px;
+    margin: 2rem auto;
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
