@@ -1,7 +1,13 @@
 <app-card>
   <div class="content">
-    <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="" />
-    <h4>Henry Bravo</h4>
-    <p>henry@email.com</p>
+    <ng-container *ngIf="!isLoading">
+      <img src="{{ profile.avatar }}" alt="" />
+      <h4>{{ profile.name }}</h4>
+      <p>{{ profile.email }}</p>
+    </ng-container>
+
+    <ng-container *ngIf="isLoading">
+      <h4>Loading..</h4>
+    </ng-container>
   </div>
 </app-card>

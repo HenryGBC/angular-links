@@ -1,13 +1,26 @@
 <div class="home-content">
   <div class="content-left">
-    <app-profile></app-profile>
+    <app-profile
+      [profile]="profile$ | async"
+      [isLoading]="loadingProfile$ | async"
+    ></app-profile>
   </div>
   <div class="content-right">
     <app-add-link></app-add-link>
-
-    <ng-container>
-      <app-item-link></app-item-link>
-      <app-item-link></app-item-link>
+    <ng-container *ngIf="loadingLinks$ | async">
+      <h1>Loading....</h1>
+    </ng-container>
+    <ng-container *ngIf="links$ | async as links">
+      <ng-container *ngIf="links.length; else elseBlock">
+        <ng-container *ngFor="let link of links">
+          <app-item-link [link]="link"></app-item-link>
+        </ng-container>
+      </ng-container>
+      <ng-template #elseBlock>
+        <h4>Links empty</h4>
+      </ng-template>
+      <!-- <app-item-link></app-item-link>
+      <app-item-link></app-item-link> -->
     </ng-container>
   </div>
 </div>
