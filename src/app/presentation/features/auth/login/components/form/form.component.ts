@@ -21,7 +21,6 @@ export class FormComponent implements OnInit {
 
   submitForm() {
     if (this.loginForm.invalid) {
-      // TODO Call error Action
       const errorMsg = 'Completa todos los campos';
       this._authFacade.setErrorLogin(errorMsg);
       return;
@@ -30,8 +29,6 @@ export class FormComponent implements OnInit {
     const data: ILoginData = { ...this.loginForm.value };
 
     this._authFacade.login(data);
-
-    // TODO Call Action para LoginAction
   }
 
   private _initSelectors() {

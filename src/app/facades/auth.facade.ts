@@ -5,6 +5,7 @@ import { ILoginData } from '../core/models/auth.model';
 import {
   loginAction,
   loginErrorAction,
+  logoutAction,
 } from '../domain/store/auth/auth.actions';
 import * as authSelectors from '../domain/store/auth/auth.selectors';
 
@@ -25,5 +26,8 @@ export class AuthFacade {
 
   setErrorLogin(message: string) {
     this._store.dispatch(loginErrorAction({ message }));
+  }
+  logout() {
+    this._store.dispatch(logoutAction());
   }
 }

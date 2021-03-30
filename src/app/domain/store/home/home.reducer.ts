@@ -10,6 +10,7 @@ export const initialHomeState: HomeState = {
   links: null,
   loadingLinks: true,
   linkErrorMessage: null,
+  loadingAddLink: null,
 };
 
 const homeReducerInternal = createReducer(
@@ -26,6 +27,19 @@ const homeReducerInternal = createReducer(
       ...state,
       links,
       loadingLinks: false,
+    };
+  }),
+  on(homeActions.createLinkAction, (state, { link }) => {
+    return {
+      ...state,
+      loadingAddLink: true,
+    };
+  }),
+  on(homeActions.successLinkAction, (state, { link }) => {
+    return {
+      ...state,
+      links: [link, ...state.links],
+      loadingAddLink: false,
     };
   })
 );

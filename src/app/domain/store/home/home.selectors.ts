@@ -21,7 +21,10 @@ export const selectLinks = createSelector(
   getHomeFeatureState,
   (state: HomeState) => state.links
 );
-
+export const selectLoaderAddLink = createSelector(
+  getHomeFeatureState,
+  (state: HomeState) => state.loadingAddLink
+);
 // export const getAuthFeatureState = createFeatureSelector('auth');
 
 // export const selectIsLoadingLogin = createSelector(

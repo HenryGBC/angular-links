@@ -9,4 +9,5 @@ export interface HomeState {
   links: ILink[] | null;
   loadingLinks: boolean | null;
   linkErrorMessage: string | null;
+  loadingAddLink: boolean | null;
 }

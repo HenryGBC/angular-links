@@ -18,3 +18,17 @@ export const successLinksAction = createAction(
   '[Home] SuccessLinksAction',
   props<{ links: ILink[] }>()
 );
+export const createLinkAction = createAction(
+  '[Home] CreateLinkAction',
+  props<{ link: ILink }>()
+);
+
+export const successLinkAction = createAction(
+  '[Home] SuccessLinkAction',
+  props<{ link: ILink }>()
+);
+export const errorLinkAction = createAction(
+  '[Home] ErrorLinkAction',
+  props<{ message: string }>()
+);
+export const clearFormAction = createAction('[Home] ClearFormAction');

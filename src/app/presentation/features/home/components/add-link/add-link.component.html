@@ -1,17 +1,32 @@
 <app-card>
   <div class="form">
     <div class="form__body">
-      <form>
+      <form [formGroup]="linkForm" (ngSubmit)="submitForm()">
         <div class="form-group">
           <label for="url">Url to save</label>
-          <input type="text" name="url" class="form-control" />
+          <input
+            type="text"
+            name="url"
+            class="form-control"
+            formControlName="name"
+          />
         </div>
         <div class="form-group">
           <label for="url">Name of url</label>
-          <input type="text" name="name" class="form-control" />
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            formControlName="url"
+          />
         </div>
 
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">
+          <ng-container *ngIf="loaderLink$ | async; else elseBlock">
+            ...Loading
+          </ng-container>
+          <ng-template #elseBlock>Add</ng-template>
+        </button>
       </form>
     </div>
   </div>

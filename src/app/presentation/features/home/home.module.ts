@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddLinkComponent } from './components/add-link/add-link.component';
 import { ItemLinkComponent } from './components/item-link/item-link.component';
 import { LayoutModule } from '../../layout/layout.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,6 @@ import { LayoutModule } from '../../layout/layout.module';
     AddLinkComponent,
     ItemLinkComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, LayoutModule],
+  imports: [CommonModule, HomeRoutingModule, LayoutModule, ReactiveFormsModule],
 })
 export class HomeModule {}

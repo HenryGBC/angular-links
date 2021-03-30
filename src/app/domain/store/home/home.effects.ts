@@ -43,6 +43,19 @@ export class HomeEffects {
       )
     )
   );
+  createLink$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(homeActions.createLinkAction),
+      switchMap((action) =>
+        this._linksService.addLink(action.link).pipe(
+          map((response) => {
+            console.log(response);
+            return homeActions.successLinkAction({ link: action.link });
+          })
+        )
+      )
+    )
+  );
   // login$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(authActions.loginAction),
